@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --gold: #c9a84c;
+  --ink: #0a0a0f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: #0a0a0f;
+  color: #ccccee;
+  font-family: 'Noto Sans JP', sans-serif;
+  min-height: 100vh;
+}
+
+/* フィルム穿孔風の装飾 */
+.film-holes::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 28px;
+  background-image: radial-gradient(circle, #0a0a0f 5px, transparent 5px);
+  background-size: 28px 24px;
+  background-color: #1a1a24;
+  border-right: 1px solid #2e2e40;
+}
+
+.film-holes::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 28px;
+  background-image: radial-gradient(circle, #0a0a0f 5px, transparent 5px);
+  background-size: 28px 24px;
+  background-color: #1a1a24;
+  border-left: 1px solid #2e2e40;
+}
+
+/* スクリプトビューア */
+.script-viewer {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  line-height: 2.2;
+  color: #e8e8f0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* ゴールドライン */
+.gold-line {
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  height: 1px;
+}
+
+/* スクロールバー */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #111118; }
+::-webkit-scrollbar-thumb { background: #2e2e40; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #c9a84c; }
